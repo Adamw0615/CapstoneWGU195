@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Customers">
+    <TableView fx:id="customerTable" layoutX="24.0" layoutY="14.0" prefHeight="338.0" prefWidth="786.0">
+        <columns>
+            <TableColumn fx:id="customerIdColumn" prefWidth="90.76366806030273" text="Customer ID" />
+            <TableColumn fx:id="customerNameColumn" prefWidth="105.5999755859375" text="Customer Name" />
+            <TableColumn fx:id="customerPhoneColumn" prefWidth="104.72732543945312" text="Phone #" />
+            <TableColumn fx:id="customerAddressColumn" prefWidth="117.8182373046875" text="Address" />
+            <TableColumn fx:id="customerPostalColumn" prefWidth="127.4180908203125" text="Postal Code" />
+            <TableColumn fx:id="customerFirstColumn" prefWidth="137.0" text="State/Providence" />
+            <TableColumn fx:id="customerCountryColumn" prefWidth="113.0" text="Country" />
+        </columns>
+    </TableView>
+    <GridPane layoutX="16.0" layoutY="363.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Button fx:id="customerDeleteLabel" mnemonicParsing="false" onAction="#actionCustomerDelete" prefWidth="75.0" text="Delete" GridPane.columnIndex="2" />
+        <Button fx:id="customerAddLabel" mnemonicParsing="false" onAction="#actionCustomerAdd" prefWidth="75.0" text="Add" GridPane.columnIndex="1" />
+        <Button fx:id="customerUpdateLabel" mnemonicParsing="false" onAction="#actionCustomerUpdate" prefWidth="75.0" text="Update" />
+    </GridPane>
+    <Button layoutX="654.0" layoutY="446.0" mnemonicParsing="false" onAction="#bckToMenu" text="Back to Menu" />
+</AnchorPane>

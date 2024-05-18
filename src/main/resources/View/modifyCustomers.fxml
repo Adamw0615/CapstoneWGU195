@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="455.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.modifyCustomers">
+    <children>
+        <GridPane layoutX="90.0" layoutY="100.0" prefHeight="257.0" prefWidth="297.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="134.39994880108804" minWidth="10.0" prefWidth="103.3454315740413" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.87275757844805" minWidth="9.96365512816378" prefWidth="9.96365512816378" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.2182318216121" minWidth="10.0" prefWidth="189.47273949993573" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER_RIGHT" contentDisplay="LEFT" text="Customer ID: " textAlignment="RIGHT" />
+                <Label text="Customer Name:" GridPane.rowIndex="1" />
+                <Label text="Phone Number:" GridPane.rowIndex="2" />
+                <Label text="Address:" GridPane.rowIndex="3" />
+                <Label text="Postal Code:" GridPane.rowIndex="4" />
+                <Label text="Division:" GridPane.rowIndex="5" />
+                <Label text="Country:" GridPane.rowIndex="6" />
+                <TextField fx:id="customerIDTextField" disable="true" prefHeight="26.0" prefWidth="127.0" GridPane.columnIndex="2">
+                    <font>
+                        <Font name="System Bold" size="12.218181610107422" />
+                    </font></TextField>
+                <TextField fx:id="customerNameTextField" prefHeight="26.0" prefWidth="151.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="customerPhoneTextField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="customerAddressTextField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="customerPostalTextField" prefHeight="26.0" prefWidth="209.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <ComboBox fx:id="customerDivisionCombo" prefHeight="26.0" prefWidth="179.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <ComboBox fx:id="customerCountryCombo" onAction="#actionCountryLoader" prefHeight="26.0" prefWidth="179.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="187.0" layoutY="33.0" prefHeight="44.0" prefWidth="179.0" text="Modify Customer" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Button fx:id="saveButton" layoutX="201.0" layoutY="381.0" mnemonicParsing="false" onAction="#actionSaveButton" prefWidth="75.0" text="Save" />
+        <Button fx:id="cancelButton" layoutX="291.0" layoutY="381.0" mnemonicParsing="false" onAction="#actionCancelButton" prefHeight="26.0" prefWidth="84.0" text="Cancel" />
+      <TableView fx:id="associatedApptTable" layoutX="418.0" layoutY="100.0" prefHeight="257.0" prefWidth="416.0">
+        <columns>
+          <TableColumn prefWidth="111.0" text="Appointment ID" />
+          <TableColumn prefWidth="64.0" text="Title" />
+            <TableColumn prefWidth="123.0" text="Description" />
+            <TableColumn prefWidth="117.0" text="Location" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="530.0" layoutY="33.0" prefHeight="44.0" prefWidth="179.0" text="Appointments" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="418.0" layoutY="373.0" mnemonicParsing="false" onAction="#noFilterSort" text="No Filter ">
+         <toggleGroup>
+            <ToggleGroup fx:id="filterSort" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="511.0" layoutY="373.0" mnemonicParsing="false" onAction="#weeklyFilterSort" text="Filter Weekly " toggleGroup="$filterSort" />
+      <RadioButton layoutX="629.0" layoutY="373.0" mnemonicParsing="false" onAction="#monthlyFilterSort" text="Filter Monthly " toggleGroup="$filterSort" />
+    </children>
+</AnchorPane>

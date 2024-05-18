@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="607.0" prefWidth="1176.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Appointments">
+    <children>
+        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="1099.0">
+            <children>
+                <GridPane layoutX="14.0" layoutY="447.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.36363288311931" minWidth="10.0" prefWidth="100.36363288311931" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.36363288311931" minWidth="10.0" prefWidth="100.36363288311931" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Button fx:id="apptDeleteLabel" mnemonicParsing="false" onAction="#actionApptDelete" prefWidth="75.0" text="Delete" GridPane.columnIndex="2" />
+                        <Button fx:id="apptAddLabel" mnemonicParsing="false" onAction="#actionApptAdd" prefWidth="75.0" text="Add" GridPane.columnIndex="1" />
+                        <Button fx:id="apptUpdateLabel" mnemonicParsing="false" onAction="#actionApptUpdate" prefWidth="75.0" text="Update" />
+                    </children>
+                </GridPane>
+                <TableView fx:id="apptTable" layoutX="50.0" layoutY="48.0" prefHeight="386.0" prefWidth="1066.0">
+                    <columns>
+                        <TableColumn fx:id="apptIdCol" prefWidth="102.98181533813477" text="Appointment ID" />
+                        <TableColumn fx:id="apptTitleCol" prefWidth="64.58184814453125" text="Title" />
+                        <TableColumn fx:id="apptDescriptionCol" prefWidth="118.69090270996094" text="Description" />
+                        <TableColumn fx:id="apptLocationCol" prefWidth="126.54541015625" text="Location" />
+                        <TableColumn fx:id="apptContactCol" prefWidth="117.81832885742188" text="Contact" />
+                        <TableColumn fx:id="apptTypeCol" prefWidth="90.763671875" text="Type" />
+                        <TableColumn fx:id="apptDateCol" prefWidth="122.1817626953125" text="Start Date/Time" />
+                        <TableColumn fx:id="apptEndDateCol" prefWidth="126.54541015625" text="End Date/Time" />
+                        <TableColumn fx:id="apptCustIdCol" prefWidth="98.6180419921875" text="Customer ID" />
+                        <TableColumn fx:id="apptUserIdCol" prefWidth="82.9090576171875" text="User ID" />
+                    </columns>
+                </TableView>
+                <RadioButton layoutX="358.0" layoutY="19.0" mnemonicParsing="false" onAction="#allAppts" selected="true" text="All Appointments">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="apptView" />
+                    </toggleGroup></RadioButton>
+                <RadioButton layoutX="640.0" layoutY="18.0" mnemonicParsing="false" onAction="#monthlyAppts" text="Month" toggleGroup="$apptView" />
+                <RadioButton layoutX="532.0" layoutY="18.0" mnemonicParsing="false" onAction="#weeklyAppts" text="Week" toggleGroup="$apptView" />
+            <TextField fx:id="searchFilter" layoutX="740.0" layoutY="14.0" prefHeight="25.0" prefWidth="167.0" promptText="Search Appointments" />
+            </children>
+        </AnchorPane>
+        <Button layoutX="992.0" layoutY="556.0" mnemonicParsing="false" onAction="#bckTomenu" text="Back to Menu" />
+    </children>
+</AnchorPane>
